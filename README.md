@@ -27,22 +27,7 @@ Windows10+Visual Studio2019
 
 11.链接器 -->> 输入 -->> 附加依赖项，添加：“msmpi.lib;”
 
-
 12.测试代码
-#include<stdio.h>
-#include "mpi.h"
-int main(int argc, char* argv[]) {
-    int numtasks, rank, rc;
-    rc = MPI_Init(&argc, &argv);
-    if (rc != MPI_SUCCESS) {
-        printf("Error starting MPI program. Terminating.\n");
-        MPI_Abort(MPI_COMM_WORLD, rc);
-    }
-    MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
-    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-    printf("Number of tasks= %d My rank= %d\n", numtasks, rank);
-    MPI_Finalize();
-
 
 13.运行
 
